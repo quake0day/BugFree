@@ -15,7 +15,6 @@ class Solution(object):
         l2 = version2.split(".")
         k = 0
         for i in xrange(min(len(l1), len(l2))):
-            print l1[i], l2[i]
             if int(l1[i]) > int(l2[i]):
                 return 1
             elif int(l1[i]) < int(l2[i]):
@@ -29,7 +28,7 @@ class Solution(object):
                 else:
                     return 1
             return 0
-        elif len(l2) > k and l2[k] != '0':
+        elif len(l2) > k:
             i = k
             while i < len(l2):
                 if (l2[i] == '0'):
