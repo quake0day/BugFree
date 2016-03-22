@@ -18,5 +18,9 @@ class Solution(object):
                 return 1
             elif int(l1[i]) < int(l2[i]):
                 return -1
+        if len(l1) > i:
+            return 1
+        elif len(l2) > i:
+            return -1
         return 0
         
