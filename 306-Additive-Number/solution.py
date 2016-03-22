@@ -6,6 +6,9 @@ class Solution(object):
         """
         self.Flag = False
 
+        if len(num) <= 2:
+            return self.Flag
+
         def helper(num, tmp, final_res):
             if len(num) == 0:
                 self.Flag = True
