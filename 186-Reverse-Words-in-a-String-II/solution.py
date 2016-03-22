@@ -11,7 +11,7 @@ class Solution(object):
                 self.reverse(beg, r-1, s)
                 beg = r + 1
             elif r == len(s) - 1:
-                self.reverse(0, r, s)
+                self.reverse(beg, r, s)
             
     
     def reverse(self, l, r, s):
