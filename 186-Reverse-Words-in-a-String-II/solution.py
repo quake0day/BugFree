@@ -5,16 +5,13 @@ class Solution(object):
         :rtype: nothing
         """
         n = len(s)
-        l, r = 0, 0
-        while r < n:
-            if s[r] != ' ':
-                r += 1
-            elif s[r] == ' ':
-                self.reverse(l, r-1, s)
-                r += 1
-                l = r
-
-        return self.reverse(0, n-1, s)
+        beg = 0
+        for r in xrange(len(s)):
+            if s[r] ==  ' ':
+                self.reverse(beg, r-1, s)
+                beg = r + 1
+            elif r == len(s) - 1:
+                self.reverse(0, r, s)
             
     
     def reverse(self, l, r, s):
