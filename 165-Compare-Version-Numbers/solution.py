@@ -11,16 +11,18 @@ class Solution(object):
             return -1
         elif not version2:
             return 1
-        l1 = version1.split(".")[::-1]
-        l2 = version2.split(".")[::-1]
-        for i in xrange(min(len(l1), len(l2))):
+        l1 = version1.split(".")
+        l2 = version2.split(".")]
+        k = 0
+        for i in xrange(min(len(l1), len(l2)), -1, -1):
             if int(l1[i]) > int(l2[i]):
                 return 1
             elif int(l1[i]) < int(l2[i]):
                 return -1
-        if len(l1) > i:
+            k += 1
+        if len(l1) > k:
             return 1
-        elif len(l2) > i:
+        elif len(l2) > k:
             return -1
         return 0
         
