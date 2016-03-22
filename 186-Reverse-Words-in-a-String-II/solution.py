@@ -4,7 +4,7 @@ class Solution(object):
         :type s: a list of 1 length strings (List[str])
         :rtype: nothing
         """
-        self.reverse(s, 0, len(s) - 1)
+        self.reverse( 0, len(s) - 1, s)
         n = len(s)
         beg = 0
         for r in xrange(len(s)):
