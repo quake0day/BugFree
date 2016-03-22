@@ -4,19 +4,24 @@ class Solution(object):
         :type num: str
         :rtype: bool
         """
-        def helper(num, tmp, final_res, s3):
+        self.Flag = False
+
+        def helper(num, tmp, final_res):
             if len(num) == 0:
-                return True
+                self.Flag = True
+                return
             if len(tmp) > 1:
-                if tmp[-2]+tmp[-1] == s3:
-                    tmp.append(s3)
-                else:
-                    return False
-            for i in xrange(1, len(num)):
-                helper(num[i:], tmp+[int(num[:i])], final_res, int(num[:i]))
-           
+                for i in xrange(1, len(num)+1):
+                    if (tmp[-1] + tmp[-2]) ==  int(num[:i]):
+                        helper(num[i:], tmp+[int(num[:i])], final_res)
+                    else:
+                        return 
+            else:
+                for i in xrange(1, len(num)+1):
+                    helper(num[i:], tmp+[int(num[:i])], final_res)
+
+
         final_res = []
         for i in xrange(len(num)):
-            if helper(num, [], final_res, 0):
-                return True
-        return False
+            helper(num, [], final_res)
+        return self.Flag
