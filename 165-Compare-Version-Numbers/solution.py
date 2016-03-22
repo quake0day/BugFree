@@ -21,8 +21,8 @@ class Solution(object):
             elif int(l1[i]) < int(l2[i]):
                 return -1
             k += 1
-        if len(l1) > k:
+        if len(l1) > k and l1[k] != '0':
             return 1
-        elif len(l2) > k:
+        elif len(l2) > k and l2[k] != '0':
             return -1
         return 0
