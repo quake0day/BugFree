@@ -20,10 +20,11 @@ class Solution(object):
             elif int(l1[i]) < int(l2[i]):
                 return -1
             k += 1
+        print k , len(l2)
         if len(l1) > k:
             i = k
             while i < len(l1):
-                if (l1[i] == '0'):
+                if (int(l1[i]) == 0):
                     i += 1
                 else:
                     return 1
@@ -31,7 +32,7 @@ class Solution(object):
         elif len(l2) > k:
             i = k
             while i < len(l2):
-                if (l2[i] == '0'):
+                if (int(l2[i]) == 0):
                     i += 1
                 else:
                     return -1
