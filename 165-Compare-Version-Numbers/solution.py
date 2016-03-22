@@ -12,7 +12,7 @@ class Solution(object):
         elif not version2:
             return 1
         l1 = version1.split(".")
-        l2 = version2.split(".")]
+        l2 = version2.split(".")
         k = 0
         for i in xrange(min(len(l1), len(l2)), -1, -1):
             if int(l1[i]) > int(l2[i]):
