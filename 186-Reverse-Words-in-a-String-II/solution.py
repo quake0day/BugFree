@@ -14,7 +14,7 @@ class Solution(object):
                 r += 1
                 l = r
 
-        return self.reverse(0, n, s)
+        return self.reverse(0, n-1, s)
             
     
     def reverse(self, l, r, s):
