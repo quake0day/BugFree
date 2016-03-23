@@ -7,6 +7,7 @@ class Solution(object):
         s = s.lstrip()
         q = collections.deque()
         l,r = 0, 0
+        res = []
         while l < len(s):
             if r != " ":
                 r += 1
