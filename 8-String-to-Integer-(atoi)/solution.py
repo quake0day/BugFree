@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         if not str_:
-            return None
+            return 0
         INT_MAX = 2147483647
         INT_MIN = -2147483648
         s = str_.lstrip()
