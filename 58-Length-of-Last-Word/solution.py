@@ -7,8 +7,8 @@ class Solution(object):
         if not s:
             return 0
         s = s.split()
-        k = len(s)-1
-        while not s[k] and k >= 0:
-            k -= 1
-        return len(s[k]) if k >= 0 else 0
+        for i in xrange(len(s)-1,-1,-1):
+            if s[i]:
+                return len(s[i])
+        return 0
         
