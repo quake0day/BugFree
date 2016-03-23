@@ -16,6 +16,7 @@ class Solution(object):
                 maxSum = max(curSum, maxSum)
                 r += 1
             else:
+                curSum = 0
                 r += 1
                 l = r
         maxSum = max(maxSum, nums[r-1])
