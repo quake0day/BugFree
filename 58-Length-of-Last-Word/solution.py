@@ -4,6 +4,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        if not s:
+            return 0
         s = s.split()
         k = len(s)-1
         while not s[k] and k >= 0:
