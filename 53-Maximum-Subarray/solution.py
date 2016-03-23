@@ -8,11 +8,11 @@ class Solution(object):
             return 0
         n = len(nums)
         l, r = 0, 0
-        maxSum = -float('inf')
+        maxSum = nums[0]
         curSum = 0
         while r < n:
             curSum += nums[r]
-            if curSum >= maxSum or curSum >= 0:
+            if curSum >= 0:
                 maxSum = max(curSum, maxSum)
                 r += 1
             else:
