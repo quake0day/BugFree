@@ -18,5 +18,5 @@ class Solution(object):
             else:
                 r += 1
                 l = r
-        maxSum = max(maxSum, nums[r])
+        maxSum = max(maxSum, nums[r-1])
         return maxSum
