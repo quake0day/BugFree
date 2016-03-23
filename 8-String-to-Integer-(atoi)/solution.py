@@ -21,7 +21,7 @@ class Solution(object):
             i += 1
         if res > INT_MAX and sign == 1:
             return INT_MAX
-        if res < INT_MIN and sign == -1:
+        if sign == -1 and res * sign < INT_MIN:
             return INT_MIN
         return res * sign
         
