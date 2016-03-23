@@ -6,7 +6,7 @@ class Solution(object):
         """
         INT_MAX = 2147483647
         INT_MIN = -2147483648
-        s = s.lstrip()
+        s = str.lstrip()
         sign = 0
         if s[0] in ('+','-'):
             sign = 1 if s[0] == '-' else 0
