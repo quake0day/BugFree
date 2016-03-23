@@ -15,7 +15,7 @@ class Solution(object):
                 q.append(s[l:r-1])
                 r += 1
                 l = r
-        q.append(s[l:r])
+        q.append(s[l:r-1])
         while q:
             res.append(q.pop())
         return "".join(res)
