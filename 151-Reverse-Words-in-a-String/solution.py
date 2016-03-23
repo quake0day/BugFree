@@ -4,20 +4,17 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        s = list(s)
-        self.reverse(0, len(s)-1, s)
-        n = len(s)
-        beg = 0
-        for r in xrange(len(s)):
-            if s[r] == ' ':
-                self.reverse(beg, r-1, s)
+        s = s.lstrip()
+        q = collections.deque()
+        l,r = 0, 0
+        while l < len(s):
+            if r != " ":
                 r += 1
-            elif r == len(s) - 1:
-                self.reverse(beg, r, s)
-        return "".join(s)
-    
-    def reverse(self, l, r, s):
-        while l < r:
-            s[l], s[r] = s[r], s[l]
-            l += 1
-            r -= 1
+            elif r == " ":
+                q.append(s[l:r])
+                r += 1
+                l = r
+        while q:
+            res.append(q.pop())
+        return res
+                
