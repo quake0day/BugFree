@@ -8,7 +8,7 @@ class Solution(object):
         q = collections.deque()
         l,r = 0, 0
         res = []
-        while l < len(s):
+        while r < len(s):
             if r != " ":
                 r += 1
             elif r == " ":
