@@ -9,9 +9,9 @@ class Solution(object):
         INT_MAX = 2147483647
         INT_MIN = -2147483648
         s = str_.lstrip()
-        sign = 0
+        sign = 1
         if s[0] in ('+','-'):
-            sign = 1 if s[0] == '-' else 0
+            sign = -1 if s[0] == '-' else 1
             s = s[1:]
         res = 0
         digits = map(str, [i for i in xrange(10)])
