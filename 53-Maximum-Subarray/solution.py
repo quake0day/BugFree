@@ -12,7 +12,7 @@ class Solution(object):
         curSum = 0
         while r < n:
             curSum += nums[r]
-            if curSum >= 0:
+            if curSum >= maxSum or curSum >= 0:
                 maxSum = max(curSum, maxSum)
                 r += 1
             else:
