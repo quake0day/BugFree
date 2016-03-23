@@ -9,7 +9,7 @@ class Solution(object):
         s = s.lstrip()
         sign = 0
         if s[0] in ('+','-'):
-            sign = 1 if s[0] == '-'
+            sign = 1 if s[0] == '-' else 0
             s = s[1:]
         res = 0
         digits = map(str, [i for i in xrange(10)])
