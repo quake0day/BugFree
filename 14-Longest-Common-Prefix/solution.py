@@ -5,12 +5,11 @@ class Solution(object):
         :rtype: str
         """
         mL = min(map(len, strs)) if strs else 0
-        for i in range(mL):
-            for j in xrange(1, len(strs)):
-                if strs[j][i] != strs[0][i]:
-                    return strs[0][:i]
-        return strs[0][:mL] if mL else ""
-
+        for j in xrange(mL):
+            for i in xrange(1, len(strs)):
+                if strs[i][j] != strs[0][j]:
+                    return strs[0][:j]
+        return strs[0][:mL] if mL else "" 
         
             
         
