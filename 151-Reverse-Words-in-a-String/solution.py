@@ -4,6 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        s = list(s)
         self.reverse(0, len(s)-1, s)
         n = len(s)
         beg = 0
@@ -13,6 +14,7 @@ class Solution(object):
                 r += 1
             elif r == len(s) - 1:
                 self.reverse(beg, r, s)
+        return "".join(s)
     
     def reverse(self, l, r, s):
         while l < r:
