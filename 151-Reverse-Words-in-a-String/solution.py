@@ -17,5 +17,5 @@ class Solution(object):
                 l = r
         while q:
             res.append(q.pop())
-        return res
+        return "".join(res)
                 
