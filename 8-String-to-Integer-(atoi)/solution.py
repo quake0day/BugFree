@@ -19,9 +19,9 @@ class Solution(object):
         while i < len(s) and s[i] in digits:
             res = res * 10 + int(s[i])
             i += 1
-        if res > INT_MAX:
+        if res > INT_MAX and sign == 1:
             return INT_MAX
-        if res < INT_MIN:
+        if res < INT_MIN and sign == -1:
             return INT_MIN
         return res * sign
         
