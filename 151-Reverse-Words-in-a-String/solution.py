@@ -12,7 +12,7 @@ class Solution(object):
             if r != " ":
                 r += 1
             elif r == " ":
-                q.append(s[l:r])
+                q.append(s[l:r-1])
                 r += 1
                 l = r
         q.append(s[l:r])
