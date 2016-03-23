@@ -12,8 +12,8 @@ class Solution(object):
         curSum = 0
         while r < n:
             curSum += nums[r]
+            maxSum = max(curSum, maxSum)
             if curSum >= 0:
-                maxSum = max(curSum, maxSum)
                 r += 1
             else:
                 curSum = 0
