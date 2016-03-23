@@ -4,6 +4,8 @@ class Solution(object):
         :type str: str
         :rtype: int
         """
+        if not str:
+            return None
         INT_MAX = 2147483647
         INT_MIN = -2147483648
         s = str.lstrip()
