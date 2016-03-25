@@ -6,7 +6,7 @@ class Solution(object):
         """
         h = {}
         for s in strings:
-            d = ord(s[0]) - 97
+            d = ord(s[0]) - ord('a')
             key = tuple((ord(ch) - d) % 26 for ch in s)
             h[key] = h[key] + [s] if key in h else [s]
 
