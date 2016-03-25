@@ -13,7 +13,6 @@ class Solution(object):
             for y in xrange(9):
                 if board[y][j] == tmp:
                     return False
-            r = [[0,1,2],[3,4,5],[6,7,8]]
             for z in range(3):
                 for q in range(3):
                     if board[(i/3)*3+z][(j/3)*3+q] == tmp:
