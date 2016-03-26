@@ -11,15 +11,15 @@ class Solution(object):
         worddic = [chr(ord('a')+i) for i in xrange(26)]
         q = collections.deque()
         q.append([beginWord,1])
+        visited = set()
         while q:
             w, t = q.popleft()
-            if w in wordList:
-                wordList.remove(w)
+            if w == endWord:
+                return t
             for c in worddic:
                 for i in xrange(n):
                     nw = w[:i] + c + w[i+1:]
-                    if nw == endWord:
-                        return t + 1
-                    elif nw in wordList:     
+                    if nw not in visited and nw in wordList:     
                         q.append([nw,t+1])
+                        visited.add(nw)
             
