@@ -15,10 +15,11 @@ class Solution(object):
             w, t = q.popleft()
             if w in wordList:
                 wordList.remove(w)
-            for i in xrange(n):
-                for c in worddic:
+            for c in worddic:
+                for i in xrange(n):
                     nw = w[:i] + c + w[i+1:]
                     if nw == endWord:
                         return t + 1
-                    if nw in wordList:     
+                    elif nw in wordList:     
                         q.append([nw,t+1])
+            
