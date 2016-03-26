@@ -10,7 +10,7 @@ class Solution(object):
         n = len(beginWord)
         worddic = (chr(ord('a')+i) for i in xrange(26))
         def dfs(beginWord, endWord, wordList):
-            for i in xrange(n)
+            for i in xrange(n):
                 for c in worddic:
                     beginWord = beginWord[:i] + c + beginWrod[i+1:]
                     if beginWord == endWord:
