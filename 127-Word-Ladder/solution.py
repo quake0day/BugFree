@@ -1,3 +1,4 @@
+import collections
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
@@ -8,17 +9,16 @@ class Solution(object):
         """
         t = 0
         n = len(beginWord)
-        worddic = (chr(ord('a')+i) for i in xrange(26))
-        def dfs(beginWord, endWord, wordList, t, res):
+        worddic = [chr(ord('a')+i) for i in xrange(26)]
+        q = collections.deque()
+        q.append([beginWord,0])
+        while q:
+            w, t = q.popleft()
             for i in xrange(n):
                 for c in worddic:
-                    beginWord = beginWord[:i] + c + beginWord[i+1:]
-                    if beginWord == endWord:
-                        res.append(t)
-                        return
-                    elif beginWord in wordList:
-                        t += 1
-                        dfs(beginWord, endWord, wordList, t, res)
-        res = []
-        dfs(beginWord, endWord, wordList, t, res)
-        return min(res) if res else 0
+                    if w == endWord:
+                        return t
+                    nw = w[:i] + c + w[i+1:]
+                    if nw in wordList:
+                        wordList.remove(nw)
+                        q.append([nw,t+1])
