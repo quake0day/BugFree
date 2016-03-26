@@ -14,8 +14,8 @@ class Solution(object):
                 for c in worddic:
                     beginWord = beginWord[:i] + c + beginWord[i+1:]
                     if beginWord == endWord:
-                        return self.t
+                        return
                     elif beginWord in wordList:
                         self.t += 1
                         dfs(beginWord, endWord, wordList)
-        return dfs(beginWord, endWord, wordList)
+        return self.t
