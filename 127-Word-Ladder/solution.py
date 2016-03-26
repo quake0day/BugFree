@@ -22,4 +22,4 @@ class Solution(object):
                     if nw not in visited and nw in wordList:     
                         q.append([nw,t+1])
                         visited.add(nw)
-            
+        return 0
