@@ -12,7 +12,7 @@ class Solution(object):
         def dfs(beginWord, endWord, wordList):
             for i in xrange(n):
                 for c in worddic:
-                    beginWord = beginWord[:i] + c + beginWrod[i+1:]
+                    beginWord = beginWord[:i] + c + beginWord[i+1:]
                     if beginWord == endWord:
                         return t
                     elif beginWord in wordList:
