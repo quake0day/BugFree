@@ -6,7 +6,7 @@ class Solution(object):
         :type wordList: Set[str]
         :rtype: int
         """
-        t = 0
+        self.t = 0
         n = len(beginWord)
         worddic = (chr(ord('a')+i) for i in xrange(26))
         def dfs(beginWord, endWord, wordList):
@@ -14,8 +14,8 @@ class Solution(object):
                 for c in worddic:
                     beginWord = beginWord[:i] + c + beginWord[i+1:]
                     if beginWord == endWord:
-                        return t
+                        return self.t
                     elif beginWord in wordList:
-                        t += 1
+                        self.t += 1
                         dfs(beginWord, endWord, wordList)
         return dfs(beginWord, endWord, wordList)
