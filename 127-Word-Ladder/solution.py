@@ -21,4 +21,4 @@ class Solution(object):
                         dfs(beginWord, endWord, wordList, t, res)
         res = []
         dfs(beginWord, endWord, wordList, t, res)
-        return min(res)
+        return min(res) if res else 0
