@@ -5,13 +5,15 @@ class Solution(object):
         :rtype: int
         """
         l, r = 0, len(nums) -1
+        curMin = nums[0]
         while l <= r:
             mid = l + r >> 1
+            if nums[mid] < curMin:
+                curMin = nums[mid]
             if nums[mid] < nums[r]:
                 r = mid - 1
             elif nums[mid] > nums[r]:
                 l = mid + 1
             else:
-                return nums[r]
-        r = max(r,0)
-        return nums[r]
+                return curMin
+        return curMin
