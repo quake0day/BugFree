@@ -1,16 +1,19 @@
 class Solution:
     # @return an integer
     def divide(self, dividend, divisor):
-        sign = 1 if (dividend > 0 and divisor > 0) or (dividend < 0 and divisor < 0) else -1
-        dividend = abs(dividend)
-        divisor = abs(divisor)
-        quotient = 0
-        while dividend >= divisor:
-            k = 0; tmp = divisor
-            while dividend >= tmp:
-                quotient += 1 << k
-                dividend -= tmp
-                tmp <<= 1
-                k += 1
-        return quotient * sign
-                
+        if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
+            if abs(dividend) < abs(divisor):
+                return 0
+        sum = 0; count = 0; res = 0
+        a = abs(dividend); b = abs(divisor)
+        while a >= b:
+            sum = b
+            count = 1
+            while sum + sum <= a:
+                sum += sum
+                count += count
+            a -= sum
+            res += count
+        if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
+            res = 0 - res
+        return res
