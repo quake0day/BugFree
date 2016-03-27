@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: int
         """
         l, r = 0, len(nums) - 1
-        while l < r:
+        while l <= r:
             mid =  l + r >> 1
             if nums[mid] == target:
                 return mid
