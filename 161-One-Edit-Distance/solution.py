@@ -10,31 +10,18 @@ class Solution(object):
             return False
         if abs(m - n) > 1:
             return False
-        L = True
-        if m == n:
-            l1, l2 = 0, 0
-            
-            while l1 < m and l2 < n:
-                if s[l1] != t[l2] and L == True:
-                    L = False
-                elif s[l1] != t[l2] and L == False:
-                    return False
-                l1 += 1
-                l2 += 1
-        elif abs(m-n) == 1:
-            l1, l2 = 0, 0
-            while l1 < m and l2 < n:
-                if s[l1] != s[l2] and L == True:
-                    if l1 + 1 < m and s[l1+1] == t[l2]:
-                        l1 += 1
-                        L = False
-                    elif l2 + 1 < n and s[l1] == t[l2 + 1]:
-                        l2 += 1
-                        L = False
-                    else:
-                        return False
-                elif s[l1] != s[l2] and L == False:
-                    return False
-                l1 += 1
-                l2 += 1
-        return L == False
+        l, r = 0, 0
+        edit_dis = 0
+        while l < m and r < n:
+            if s[l] != t[r]:
+                edit_dis += 1
+                if l + 1 < m and s[l+1] == t[r]:
+                    l += 1
+                elif r + 1 < n and s[l] == t[r+1]:
+                    r += 1
+            if edit_dis > 1:
+                return False
+            l += 1
+            r += 1
+        edit_dis += (m - l) + (n - r)
+        return edit_dis == 1
