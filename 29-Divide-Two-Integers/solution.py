@@ -6,8 +6,8 @@ class Solution(object):
         :rtype: int
         """
         sign = 1 if (dividend > 0 and divisor > 0) or (dividend < 0 and divisor < 0) else -1
-        dividend = dividend if not sign else -dividend
-        divisor = divisor if not sign else -divisor
+        dividend = abs(dividend) 
+        divisor = abs(divisor)
         q = 0
         while dividend >= divisor:
             k = 0
