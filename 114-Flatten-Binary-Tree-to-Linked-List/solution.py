@@ -21,7 +21,7 @@ class Solution(object):
             if node.right:
                 q.append(node.right)
             if node.left:
-                q.apppend(node.left)
+                q.append(node.left)
             l.append(node)
             if len(l) > 1:
                 if l[-1] and l[-2]:
