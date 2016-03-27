@@ -13,4 +13,5 @@ class Solution(object):
                 l = mid + 1
             else:
                 return nums[r]
+        r = max(r,0)
         return nums[r]
