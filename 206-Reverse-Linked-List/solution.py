@@ -20,7 +20,8 @@ class Solution(object):
             node = q.pop()
             q.append(node)
             q[-1].next = q[-2]
-            q.append(node.next)
+            if node.next:
+                q.append(node.next)
             q.popleft()
         q[0].next = None
         return q[-1]
