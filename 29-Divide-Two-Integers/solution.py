@@ -18,6 +18,8 @@ class Solution:
                 count += count
             a -= sum
             res += count
+            
+                
         if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
             res = 0 - res
         return res
