@@ -10,19 +10,11 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head:
-            return head
-        q = collections.deque()
-        q.append(head)
-        if head.next:
-            q.append(head.next)
-        while len(q) > 1:
-            node = q.pop()
-            q.append(node)
-            q[-1].next = q[-2]
-            if node.next:
-                q.append(node.next)
-            q.popleft()
-        q[0].next = None
-        return q[-1]
+        cur = None
+        while head:
+            tmp = head.next
+            head.next = cur
+            cur = head
+            head = tmp
+        return cur
         
