@@ -13,8 +13,11 @@ class Solution(object):
         L = True
         if m == n:
             l1, l2 = 0, 0
+            
             while l1 < m and l2 < n:
-                if s[l1] != t[l2]:
+                if s[l1] != t[l2] and L == True:
+                    L = False
+                elif s[l1] != t[l2] and L == False:
                     return False
                 l1 += 1
                 l2 += 1
@@ -34,4 +37,4 @@ class Solution(object):
                     return False
                 l1 += 1
                 l2 += 1
-        return True
+        return L == False
