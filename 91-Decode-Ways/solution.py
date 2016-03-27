@@ -4,6 +4,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        if not s:
+            return 0
         n = len(s)
         dp = [0] * (n+1)
         dp[0] = 1
