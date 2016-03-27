@@ -19,8 +19,7 @@ class Solution(object):
                     l += 1
                 elif r + 1 < n and s[l] == t[r+1]:
                     r += 1
-            if edit_dis > 1:
-                return False
+
             l += 1
             r += 1
         edit_dis += (m - l) + (n - r)
