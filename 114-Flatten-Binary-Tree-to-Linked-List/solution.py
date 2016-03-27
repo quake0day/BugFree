@@ -11,7 +11,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
-
+        if not root:
+            return 
         q = collections.deque()
         l = collections.deque()
         q.append(root)
