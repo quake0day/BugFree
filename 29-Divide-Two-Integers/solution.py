@@ -1,6 +1,10 @@
 class Solution:
     # @return an integer
     def divide(self, dividend, divisor):
+        max_int = 2147483647
+        min_int = -2147483648
+        if dividend == min_int and divisor == -1:
+            return max_int
         if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
             if abs(dividend) < abs(divisor):
                 return 0
