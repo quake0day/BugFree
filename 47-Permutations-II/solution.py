@@ -7,7 +7,7 @@ class Solution(object):
         res = []
         q = collections.deque()
         for i in xrange(len(nums)):
-            q.append([nums[i], nums[:i]+nums[i+1:]])
+            q.append([[nums[i]], nums[:i]+nums[i+1:]])
         while q:
             n, tmp = q.popleft()
             if len(n) == len(nums):
