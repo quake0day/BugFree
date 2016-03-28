@@ -1,20 +1,24 @@
-import collections
 class Solution(object):
     def permuteUnique(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        def helper(nums, path, res):
+            if len(path) == len(nums):
+                res.append(path)
+            
+            i = 0
+            while i < len(nums):
+                if i not in path:
+                    helper(nums, path+[i], res)
+                while i + 1 < len(nums) and nums[i] == nums[i+1]:
+                    i += 1
+                i += 1
+        
+        if not nums or len(nums) == 1:
+            return [nums]
+        nums = sorted(nums)
         res = []
-        q = collections.deque()
-        for i in xrange(len(nums)):
-            q.append([[nums[i]], nums[:i]+nums[i+1:]])
-        while q:
-            n, tmp = q.popleft()
-            if len(tmp) == 0:
-                if n not in res:
-                    res.append(n)
-                continue
-            for i in xrange(len(tmp)):                
-                q.append([n+[tmp[i]], tmp[:i]+tmp[i+1:]])
+        helper(nums, [], res)
         return res
