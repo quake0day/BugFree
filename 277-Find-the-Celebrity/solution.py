@@ -15,6 +15,6 @@ class Solution(object):
             if not knows(i, c):
                 c = i
         for k in xrange(n):
-            if k != c and find(c,k):
+            if k != c and knows(c,k):
                 return -1
         return c
