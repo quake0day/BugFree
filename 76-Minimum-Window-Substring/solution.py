@@ -5,6 +5,8 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
+        if not s:
+            return ""
         h = collections.Counter(t)
         cnt = 0
         L = len(s) + 1
@@ -23,4 +25,5 @@ class Solution(object):
                     h[s[l]] += 1
                     cnt -= 1 if h[s[l]] > 0 else 0
                 l += 1
+            r += 1
         return s[start:start+L]
