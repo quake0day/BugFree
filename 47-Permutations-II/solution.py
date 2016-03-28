@@ -6,11 +6,11 @@ class Solution(object):
         """
         def helper(nums, path, res):
             if len(path) == len(nums):
-                res.append(path)
+                res.append([nums[x] for x in path])
             
             i = 0
             while i < len(nums):
-                if nums[i] not in path:
+                if i not in path:
                     helper(nums, path+[i], res)
                 while i + 1 < len(nums) and nums[i] == nums[i+1]:
                     i += 1
