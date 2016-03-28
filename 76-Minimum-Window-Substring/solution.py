@@ -5,8 +5,7 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        if not s:
-            return ""
+
         h = collections.Counter(t)
         cnt = 0
         L = len(s) + 1
