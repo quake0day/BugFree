@@ -13,7 +13,7 @@ class Solution(object):
             while l < r:
                 target = -nums[k]
                 if nums[l] + nums[r] == target:
-                    if [nums[k], nums[l], nums[r] not in res:
+                    if [nums[k], nums[l], nums[r]] not in res:
                         res.append([nums[k], nums[l], nums[r]])
                     l += 1
                     r -= 1
