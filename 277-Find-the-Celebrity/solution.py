@@ -14,8 +14,8 @@ class Solution(object):
         for i in xrange(n):
             if knows(c, i):
                 c = i
-        if any(knows(x, i) for i in xrange(i)):
+        if any(knows(c, i) for i in xrange(c)):
             return -1
-        if any(not knows(i,x) for i in xrange(n)):
+        if any(not knows(i,c) for i in xrange(n)):
             return -1
-        return x
+        return c
