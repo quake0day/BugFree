@@ -12,8 +12,8 @@ class Solution(object):
             while i < len(nums):
                 if i not in path:
                     helper(nums, path+[i], res)
-                while i + 1 < len(nums) and nums[i] == nums[i+1]:
-                    i += 1
+                    while i + 1 < len(nums) and nums[i] == nums[i+1]:
+                        i += 1
                 i += 1
         
         if not nums or len(nums) == 1:
