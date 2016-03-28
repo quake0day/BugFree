@@ -1,3 +1,4 @@
+import collections
 class Solution(object):
     def permuteUnique(self, nums):
         """
@@ -13,9 +14,10 @@ class Solution(object):
             if len(n) == len(nums):
                 if n not in res:
                     res.append(n)
-                    continue
+                continue
             for i in xrange(len(tmp)):
-                newn = n.append(tmp[i])
-                ntmp = tmp[:i]+tmp[i+1:]
-                q.append([newn, ntmp])
+                n.append(tmp[i])
+                ntmp = tmp[:i] + tmp[i+1:]
+                if ntmp:
+                    q.append([n, ntmp])
         return res
