@@ -17,7 +17,7 @@ class Solution(object):
                         res.append([nums[k], nums[l], nums[r]])
                     l += 1
                     r -= 1
-                elif nums[l] + nums[k] > target:
+                elif nums[l] + nums[r] > target:
                     r -= 1
                 else:
                     l += 1
