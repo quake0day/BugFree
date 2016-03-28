@@ -11,7 +11,7 @@ class Solution(object):
             l = k + 1
             r = n - 1
             while l < r:
-                target = -k
+                target = -nums[k]
                 if nums[l] + nums[r] == target:
                     res.append([nums[k], nums[l], nums[r]])
                     l += 1
