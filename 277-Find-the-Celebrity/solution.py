@@ -12,9 +12,10 @@ class Solution(object):
         """
         c = 0
         for i in xrange(n):
-            if not knows(i, c):
+            if knows(c, i):
                 c = i
-        for k in xrange(n):
-            if k != c and (knows(c,k) or not knows(k,c)):
-                return -1
-        return c
+        if any(knows(x, i) for i in xrange(i)):
+            return -1
+        if any(not knows(i,x) for i in xrange(n)):
+            return -1
+        return x
