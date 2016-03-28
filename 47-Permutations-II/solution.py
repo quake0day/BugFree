@@ -18,6 +18,5 @@ class Solution(object):
             for i in xrange(len(tmp)):
                 n.append(tmp[i])
                 ntmp = tmp[:i] + tmp[i+1:]
-                if ntmp:
-                    q.append([n, ntmp])
+                q.append([n, ntmp])
         return res
