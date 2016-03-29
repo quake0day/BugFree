@@ -6,7 +6,7 @@ class Solution(object):
         """
         if not s:
             return ""
-        s = list(s)
+        s = list(s.strip())
         self.reverse(s, 0, len(s)-1)
         
         idx = 0
