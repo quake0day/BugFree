@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: str
         """
         if not s:
-            return None
+            return ""
         s = list(s)
         self.reverse(s, 0, len(s)-1)
         
