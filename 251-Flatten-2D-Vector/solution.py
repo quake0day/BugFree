@@ -5,8 +5,7 @@ class Vector2D(object):
         Initialize your data structure here.
         :type vec2d: List[List[int]]
         """
-        for i in xrange(vec2d):
-            
+
         self.vec2d = vec2d
         self.vec = []
         self.flatten(vec2d)
