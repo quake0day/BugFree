@@ -4,6 +4,8 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        if not s:
+            return None
         s = self.reverse(s, 0, len(s)-1)
         
         idx = 0
