@@ -12,5 +12,5 @@ class Solution(object):
             for j in xrange(n):
                 if c & (1 << j):
                     tmp.append(nums[j])
-            res.append(tmp)
+            res.append(sorted(tmp))
         return res
