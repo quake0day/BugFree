@@ -6,7 +6,8 @@ class Solution(object):
         """
         if not s:
             return None
-        s = self.reverse(s, 0, len(s)-1)
+        s = list(s)
+        self.reverse(s, 0, len(s)-1)
         
         idx = 0
         for i in xrange(len(s)):
@@ -15,7 +16,7 @@ class Solution(object):
                 idx = i + 1
         self.reverse(s, idx, len(s) - 1)
         
-        return s
+        return "".join(s)
     
     def reverse(self, s, l, r):
         while l < r:
