@@ -14,7 +14,7 @@ class Vector2D(object):
     def flatten(self, vec):
         for v in vec:
             if isinstance(v, list):
-                return self.flatten(v)
+                self.flatten(v)
             else:
                 self.vec.append(v)
         
