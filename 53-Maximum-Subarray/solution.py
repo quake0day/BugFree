@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         max_ = 0
-        curMax = 0
+        curMax = -float('inf')
         for i in xrange(len(nums)):
             curMax += nums[i]
             if curMax < 0:
