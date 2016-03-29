@@ -4,4 +4,19 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return " ".join(s.split()[::-1])
+        s = self.reverse(s, 0, len(s)-1)
+        
+        idx = 0
+        for i in xrange(len(s)):
+            if s[i] == " ":
+                self.reverse(s, idx, i-1)
+                idx = i + 1
+        self.reverse(s, idx, len(s) - 1)
+        
+        return s
+    
+    def reverse(self, s, l, r):
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
