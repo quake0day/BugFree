@@ -26,7 +26,7 @@ class Solution(object):
                 nxt = root.left if root.left else root.right
             root = root.next
             if not root:
-                root = root.left 
+                root = nxt
                 nxt = None
                 pre = None
                 
