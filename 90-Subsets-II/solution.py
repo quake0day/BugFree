@@ -7,6 +7,7 @@ class Solution(object):
         n = len(nums)
         size = 2 ** n
         res = []
+        nums.sort()
         for c in xrange(size):
             tmp = []
             for j in xrange(n):
