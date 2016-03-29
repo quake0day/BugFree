@@ -9,7 +9,7 @@ class Solution(object):
         
         for i in xrange(n-2, -1, -1):
             res[i] = nums[i+1] * res[i+1]
-        left = 0
+        left = 1
         for i in xrange(n):
             res[i] *= left
             left *= nums[i]
