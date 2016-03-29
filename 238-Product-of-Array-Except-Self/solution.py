@@ -1,19 +1,16 @@
-import collections
-import itertools 
 class Solution(object):
     def productExceptSelf(self, nums):
         """
         :type nums: List[int]
         :rtype: List[int]
         """
-        q = collections.deque(nums)
         n = len(nums)
-        res = []
-        tmp = []
-        for i in xrange(1, n):
-            q.rotate(1)
-            tmp.append(list(q))
-        tmp = list(zip(*tmp))
-        for t in tmp:
-            res.append(reduce(lambda x, y: x*y, t))
+        res = [1] * n
+        
+        for i in xrange(n-2, -1, -1):
+            res[i] = nums[i+1] * res[i+1]
+        left = 0
+        for i in xrange(n):
+            res[i] *= left
+            left *= nums[i]
         return res
