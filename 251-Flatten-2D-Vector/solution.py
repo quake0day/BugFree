@@ -23,6 +23,7 @@ class Vector2D(object):
         """
         :rtype: int
         """
+        tmp = None
         if self.x < len(self.vec):
             tmp = self.vec[self.x]
             self.x += 1
