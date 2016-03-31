@@ -21,5 +21,4 @@ class Solution(object):
         lca_in_right = self.lowestCommonAncestor(root.right, p,q)
         if lca_in_left and lca_in_right:
             return root
-        else:
-            return lca_in_left or lca_in_right
+        return lca_in_left or lca_in_right
