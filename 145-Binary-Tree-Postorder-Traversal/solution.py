@@ -12,7 +12,6 @@ class Solution(object):
         :rtype: List[int]
         """
         if not root: return []
-        if root.left == root.right == None: return [root.val]
         postorder = []
         stack = [root]
         
