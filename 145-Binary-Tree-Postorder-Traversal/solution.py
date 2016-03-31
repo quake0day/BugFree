@@ -11,9 +11,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        if not root: return []
         postorder = []
-        stack = [root]
+        stack = [root] if root else []
         
         while len(stack):
             if root.left == None and root.right == None:
