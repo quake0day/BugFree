@@ -29,10 +29,6 @@ class Solution(object):
         :type nestedList: List[NestedInteger]
         :rtype: int
         """
-        def dsHelper(nl, depth = 1):
-            ret = 0
-            for ni in nl:
-                ret += depth * ni.getInteger() if ni.isInteger() else dsHelper(ni.getList(), depth +1)
-            return ret
-        return dsHelper(nestedList)
-        
+        def scanList(curr_list, depth):
+            return sum(depth * x.getInteger() if x.isInteger() else scanList(x.getList(), depth + 1) for x in curr_list)
+        return scanList(nestedList, 1)
